@@ -31,7 +31,9 @@ module.exports = {
     },
     plugins: [
         new WebpackShellPluginNext({
-            onBuildEnd: ['yarn run:dev']
+            onBuildEnd: {
+                scripts: ['yarn run:dev'],
+            },
         })
     ]
 };

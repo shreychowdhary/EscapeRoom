@@ -20,9 +20,8 @@ const io = new Server(server, {
 });
 
 app.post("/event", (req, res) => {
-    console.log(req.body);
-    io.emit("event", req.body);
-    res.send("Succesful");
+    io.emit(req.body.name, req.body.data);
+    res.send("Successful");
 });
 
 
