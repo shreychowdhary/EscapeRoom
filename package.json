@@ -4,18 +4,12 @@
   "main": "index.js",
   "author": "shreychowdhary <shrey.chowdhary1@gmail.com>",
   "license": "MIT",
-  "dependencies": {
-    "husky": "^5.2.0",
-    "prettier": "^2.2.1"
+  "devDependencies": {
+    "husky": "^5.2.0"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "bash pre-commit.sh"
     }
-  },
-  "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "eslint --fix"
-    ]
   }
 }
