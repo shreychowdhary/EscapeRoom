@@ -12,7 +12,7 @@ app.use(express.static(clientBuildPath));
 app.use(cors());
 app.use(bodyParser.json());
 
-
+console.log(PORT);
 const server = app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 const io = new Server(server, {
     cors: {

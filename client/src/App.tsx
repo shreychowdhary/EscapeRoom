@@ -1,15 +1,12 @@
 import React from 'react';
 import io from 'socket.io-client';
-
-import { SOCKETIO_URL } from './config';
-
 interface LocationPuzzleSolution {
     index: number;
     solution: string;
 }
 
 function App() {
-    const socketIO = React.useRef<SocketIOClient.Socket>(io(SOCKETIO_URL));
+    const socketIO = React.useRef<SocketIOClient.Socket>(io());
 
     React.useEffect(() => {
         socketIO.current.on('Translate', () => {
