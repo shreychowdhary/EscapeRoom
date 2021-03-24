@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "(cd server && yarn start:prod)",
-    "postinstall": "(cd client && yarn && yarn build)",
+    "postinstall": "(cd client && yarn && yarn build)"
   },
   "husky": {
     "hooks": {
