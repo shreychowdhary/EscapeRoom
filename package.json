@@ -8,8 +8,9 @@
     "husky": "^5.2.0"
   },
   "scripts": {
-    "start": "(cd server && yarn && yarn start:prod)",
-    "build": "(cd client && yarn && yarn build)"
+    "start": "(cd server && yarn start:prod)",
+    "build": "yarn install:server && (cd client && yarn && yarn build)",
+    "install:server": "(cd server && yarn)"
   },
   "husky": {
     "hooks": {
