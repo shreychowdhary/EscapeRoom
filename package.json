@@ -9,8 +9,6 @@
   },
   "scripts": {
     "start": "(yarn build:client && cd server && yarn start:prod)",
-    "start:dev": "(yarn start:client && cd server && yarn start:dev)",
-    "start:client": "(cd client && yarn && yarn start)",
     "build:client": "(cd client && yarn && yarn build)"
   },
   "husky": {
