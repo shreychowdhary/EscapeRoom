@@ -9,11 +9,11 @@
   },
   "scripts": {
     "start": "(cd server && yarn start:prod)",
-    "postinstall": "(cd client && yarn && yarn build)"
+    "build": "(cd client && yarn && yarn build)"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "bash pre-commit.sh"
+      "pre-commit": "(cd client && yarn && yarn eslint) && (cd server && yarn && yarn eslint)"
     }
   },
   "engines": {
