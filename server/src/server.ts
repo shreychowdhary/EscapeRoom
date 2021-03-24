@@ -7,10 +7,11 @@ import cors from "cors";
 const PORT = process.env.PORT || 8080;
 
 const app = express();
-const buildPath = path.join(__dirname, '../client/', 'build');
-app.use(express.static(buildPath));
+const clientBuildPath = path.join(__dirname, '../../client/build');
+app.use(express.static(clientBuildPath));
 app.use(cors());
 app.use(bodyParser.json());
+
 
 const server = app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 const io = new Server(server, {

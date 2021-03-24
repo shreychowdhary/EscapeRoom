@@ -5,7 +5,9 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "start:dev": "NODE_ENV=development webpack",
+    "start:prod": "cp .env.prod .env && NODE_ENV=production webpack",
+    "run:prod": "NODE_ENV=production node -r dotenv/config build/index.js",
+    "start:dev": "cp .env.dev .env && NODE_ENV=development webpack",
     "run:dev": "NODE_ENV=development nodemon -r dotenv/config build/index.js",
     "eslint": "eslint --config ./.eslintrc.js --ext .js,.ts src/"
   },

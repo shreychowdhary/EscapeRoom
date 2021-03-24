@@ -29,11 +29,18 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        new WebpackShellPluginNext({
-            onBuildEnd: {
-                scripts: ['yarn run:dev'],
-            },
-        })
-    ]
+    plugins: NODE_ENV === 'development'
+        ? [
+            new WebpackShellPluginNext({
+                onBuildEnd: {
+                    scripts: ['yarn run:dev'],
+                },
+            })
+        ] : [
+            new WebpackShellPluginNext({
+                onBuildEnd: {
+                    scripts: ['yarn run:prod'],
+                },
+            })
+        ]
 };
