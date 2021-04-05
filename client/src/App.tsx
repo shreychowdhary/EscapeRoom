@@ -9,7 +9,7 @@ interface LocationPuzzleSolution {
 }
 
 function App() {
-    const socketIO = React.useRef<SocketIOClient.Socket>(io('localhost:8080'));
+    const socketIO = React.useRef<SocketIOClient.Socket>(io());
     const canvasRef = React.useRef<HTMLCanvasElement>(null);
 
     React.useEffect(() => {
