@@ -1750,6 +1750,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-splitter-layout@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@types/react-splitter-layout/-/react-splitter-layout-3.0.1.tgz#83fd7683b07f804fb1a7b72651f5eb99cd5258a9"
+  integrity sha512-NsKq32LdG11G/Uj+xo2QmC9S8YSe8JRtxkBhsBE7ODFs0zcnzNEqFAQirP0H7rPe2WFGiu+d/44xbHsew7QAJw==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@^17.0.0":
   version "17.0.3"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.3.tgz#ba6e215368501ac3826951eef2904574c262cc79"
@@ -9176,6 +9183,11 @@ react-scripts@4.0.3:
     workbox-webpack-plugin "5.1.4"
   optionalDependencies:
     fsevents "^2.1.3"
+
+react-splitter-layout@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/react-splitter-layout/-/react-splitter-layout-4.0.0.tgz#70b43ca6a78c056f5e5fbf29c67b597f040fbf2e"
+  integrity sha512-SLqOjBOxRuizWUa83w6q5/u9cDWa9/yj9Iko9V9JFN8x+cqIXiDlUFWSx+icz3IIgvsN/oRIw3za5/32RjIwrA==
 
 react@^17.0.1:
   version "17.0.1"
