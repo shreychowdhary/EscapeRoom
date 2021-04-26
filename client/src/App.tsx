@@ -60,13 +60,15 @@ function App() {
         <ListItem className="EndMessage">
             <Card className={classes.card} variant="outlined">
                 <CardContent>
-                    <Typography>We have received your transmission and would like to send out a thanks for returning our child. Because of this, we will simply return to our home planet without destroying yours.
-</Typography>
+                    <Typography>
+                        We have received your transmission and would like to send out a thanks for returning our child.
+                        Because of this, we will simply return to our home planet without destroying yours.
+                    </Typography>
                     <Typography color="textSecondary">From: Baby Bigfoot&apos;s Parents</Typography>
                 </CardContent>
             </Card>
         </ListItem>
-    )
+    );
 
     const socketIO = React.useRef<SocketIOClient.Socket>(io());
     const canvasRef = React.useRef<HTMLCanvasElement>(null);
