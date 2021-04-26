@@ -94,7 +94,14 @@ function App() {
                     image.onload = () => {
                         context.drawImage(image, 400 - data.index * 70 - 25, 400 - 25, 50, 50);
                     };
-                    context.fillText(data.planetId, 310 - data.index * 70, 380);
+                    if (data.index == 5) {
+                        context.fillStyle = 'blue';
+                        context.font = '30px Arial';
+                        const labels = ['21', '33', '5', '55', '8'];
+                        for (let i = 0; i < 5; i++) {
+                            context.fillText(labels[i], 400 - i * 70 - 90, 400 - 30);
+                        }
+                    }
                 }
             }
         });
