@@ -56,11 +56,24 @@ function App() {
         </ListItem>
     );
 
+    const EndMessage = () => (
+        <ListItem className="EndMessage">
+            <Card className={classes.card} variant="outlined">
+                <CardContent>
+                    <Typography>We have received your transmission and would like to send out a thanks for returning our child. Because of this, we will simply return to our home planet without destroying yours.
+</Typography>
+                    <Typography color="textSecondary">From: Baby Bigfoot&apos;s Parents</Typography>
+                </CardContent>
+            </Card>
+        </ListItem>
+    )
+
     const socketIO = React.useRef<SocketIOClient.Socket>(io());
     const canvasRef = React.useRef<HTMLCanvasElement>(null);
 
     const [showTranslatedMessage, setShowTranslatedMessage] = React.useState(false);
     const [showSolarSystem, setShowSolarSystem] = React.useState(false);
+    const [showEndMessage, setShowEndMessage] = React.useState(false);
 
     const [playDrAudio] = useSound('./sounds/dr_audio_file.mp3');
 
@@ -106,7 +119,7 @@ function App() {
             }
         });
         socketIO.current.on('End', () => {
-            console.log('End');
+            setShowEndMessage(true);
         });
     }, []);
 
@@ -148,7 +161,7 @@ function App() {
                         <ListItem className="UntranslatedMessage">
                             <Card className={classes.card} variant="outlined">
                                 <CardContent>
-                                    <Typography>Message Received:</Typography>
+                                    <Typography>Message Received: Use Translator to translate</Typography>
                                     <img src="images/UntranslatedMessage.png" />
                                     <Typography color="textSecondary">From: Dr.BF</Typography>
                                 </CardContent>
@@ -156,6 +169,7 @@ function App() {
                         </ListItem>
                         {showTranslatedMessage ? <TranslatedMessage /> : null}
                         {showSolarSystem ? <SolarSystemMessage /> : null}
+                        {showEndMessage ? <EndMessage /> : null}
                     </List>
                 </div>
                 <div className={classes.solar}>
