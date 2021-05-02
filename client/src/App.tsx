@@ -78,12 +78,14 @@ function App() {
     const [showEndMessage, setShowEndMessage] = React.useState(false);
 
     const [playDrAudio] = useSound('./sounds/dr_audio_file.mp3');
+    const [playNotification] = useSound('./sounds/notification.mp3');
 
     React.useEffect(() => {
         socketIO.current.on('Translate', () => {
+            playNotification();
             setShowTranslatedMessage(true);
         });
-    }, [showTranslatedMessage]);
+    }, [showTranslatedMessage, playNotification]);
 
     React.useEffect(() => {
         socketIO.current.on('Location', (data: LocationPuzzleSolution) => {
@@ -91,6 +93,7 @@ function App() {
                 const canvas = canvasRef.current;
                 const context = canvas.getContext('2d');
                 if (context) {
+                    playNotification();
                     if (data.index == 1) {
                         setShowSolarSystem(true);
                         for (let i = 0; i < 5; i++) {
@@ -121,9 +124,10 @@ function App() {
             }
         });
         socketIO.current.on('End', () => {
+            playNotification();
             setShowEndMessage(true);
         });
-    }, []);
+    }, [playNotification]);
 
     return (
         <div className="App">
