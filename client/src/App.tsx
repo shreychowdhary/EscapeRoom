@@ -115,6 +115,7 @@ function App() {
                     if (data.index == 5) {
                         context.fillStyle = 'blue';
                         context.font = '30px Arial';
+                        // These are the values for the phone box code
                         const labels = ['21', '33', '5', '55', '8'];
                         for (let i = 0; i < 5; i++) {
                             context.fillText(labels[i], 400 - i * 70 - 90, 400 - 30);

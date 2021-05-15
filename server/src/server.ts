@@ -20,11 +20,13 @@ const io = new Server(server, {
     },
 });
 
+// Any Json Requests sent to /event result in a socket io emit
 app.post('/event', (req, res) => {
     io.emit(req.body.name, req.body.data);
     res.send('Successful');
 });
 
+// Log connections
 io.on('connection', (socket) => {
     console.log('Client connected');
     socket.on('disconnect', () => console.log('Client disconnected'));
